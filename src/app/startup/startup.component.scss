@@ -1,0 +1,50 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.duration {
+    float: right;
+    color: white; 
+    font-size: 16px;
+    font-family: 'Kaushan Script', cursive;
+    margin-right: 6px;
+}
+
+.moshe-dayan-label {
+    font-size: 40px;
+    color: #fcaf43;
+    width: 300px;
+    font-weight: bold;
+    font-family: 'Kaushan Script', cursive;
+    padding: 0px 14px 3px 10px;
+    border-radius: 29px;
+    background-color: white;
+    border: 3px solid grey;
+    z-index: 200;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.grid-img {
+    border: 4px solid white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    max-height: 450px;
+}
+
+.explore-btn {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Kaushan Script', cursive;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}

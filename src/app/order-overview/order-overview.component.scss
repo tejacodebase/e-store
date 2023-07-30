@@ -1,0 +1,30 @@
+.active{
+    color: white;
+    font-weight: bold;
+    background: #00bcd4 !important;
+}
+body{
+    background: #f1f3f6;
+}
+hr {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: 0;
+    border-top: 1px solid #b0b0b0;
+}
+.art-title{
+    font-size: 18px; 
+    color: #607d8b;
+    font-weight: bold;
+}
+.art-price{
+    font-size: 16px; 
+    color: #777777;
+    font-weight: bold;
+}
+.art-info{
+    font-size: 12px; 
+    white-space: nowrap; 
+    color: gray;
+    font-weight: bold;
+}

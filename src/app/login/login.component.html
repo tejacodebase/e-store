@@ -1,0 +1,39 @@
+<div [ngStyle]="{'background':  'url(assets/images/login-backgroud.jpg) repeat #fff'}">
+  
+  <app-header></app-header>
+
+  <div class="container login-body">
+    <div class="row">
+      <div class="col-md-4"> </div>
+
+      <div class="col-md-4">
+        <div class="login-card">
+          <span class="login-label"> Login </span>
+
+          <input id="username" placeholder="Username / Phone" value="{{ userName }}" class="form-control" />
+
+          <br />
+
+          <input type="password" placeholder="Password" value="{{ password }}" class="form-control" />
+
+          <br />
+
+          <div class="centerDiv">
+            <button (click)="login()" class="btn btn-primary" style="width: 200px; font-weight: bold;"> Login </button>
+            <br />
+            <button (click)="registerInit()" class="btn btn-link" style="font-size: 11px; font-weight: bold;"> Register
+            </button>
+            <button (click)="forgotPassword()" class="btn btn-link"
+              style="color: red; font-size: 11px; font-weight: bold;">
+              Forgot password </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+
+</div>

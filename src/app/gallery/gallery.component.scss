@@ -1,0 +1,26 @@
+.category-label {
+    color: mediumseagreen;
+    font-size: 20px;
+    color: indianred !important;
+    font-weight: bold;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.grid-img-1 {
+    max-height: 180px;
+    margin-right: 50px;
+    margin: auto;
+}
+
+.grid-img-2 {
+    margin-right: 50px;
+    margin: auto;
+}
+
+.catagory-img {
+    cursor: pointer;
+}
+
+.catagory-img :hover {
+    border: 1px solid white;
+}
