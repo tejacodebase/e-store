@@ -1,0 +1,68 @@
+<div>
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between 
+                py-1 border-bottom header-style">
+    <!-- mb-4  -->
+    <a class="navbar-brand brand-name" routerLink="/home"> Moshe Dayan </a>
+
+    <div class="col-md-3 mb-2 mb-md-0"></div>
+
+    <ul class="nav justify-content-end ">
+      <li>
+        <a routerLinkActive="active-link" class="nav-link px-2" routerLink="/home"> Home </a>
+      </li>
+      <li>
+        <a routerLinkActive="active-link" class="nav-link px-2" [routerLink]="['/gallery']"> Artwork </a>
+      </li>
+      <li>
+        <a routerLinkActive="active-link" class="nav-link px-2" routerLink="/about-me">About </a>
+      </li>
+      <li>
+        <a routerLinkActive="active-link" class="nav-link px-2" routerLink="/contact-us"> <i class="fa fa-phone"></i>
+          Contact</a>
+      </li>
+
+      <li>
+        <a routerLinkActive="active-link" class="nav-link px-2" routerLink="/member"> Login </a>
+      </li>
+  
+      <div *ngIf="false">
+        <li>
+          <a routerLinkActive="active-link" class="nav-link px-2" routerLink="/login">Login </a>
+        </li>
+        <li>
+          <a routerLinkActive="active-link" class="nav-link px-2" routerLink="/sign-up">Sign-up </a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item d-flex gap-2 align-items-center" routerLink="/login"
+                routerLinkActive="active-link">
+                <i class="bi bi-person-fill-lock" style="font-size: 26px;"></i>
+                Login
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex gap-2 align-items-center" routerLink="/sign-up"
+                routerLinkActive="active-link">
+                <i class="bi bi-person-heart" style="font-size: 26px;"></i>
+                Sign Up / Register
+              </a>
+            </li>
+          </ul>
+        </li>
+ 
+        <li *ngIf="false" routerLinkActive="link-secondary">
+          <a class="nav-link px-2" routerLink="/login"> <i class="fa fa-sign-in"></i> Login </a>
+        </li>
+        <li *ngIf="false" routerLinkActive="link-secondary">
+          <a class="nav-link px-2" routerLink="/cart"> <i class="fa fa-shopping-cart"></i>
+            Cart
+            <span *ngIf="cartCount" class="label label-warning" style="border-radius: 10px; padding: 3px 5px 2px 5px;">
+              {{ cartCount }} </span> </a>
+        </li>
+      </div>
+    </ul>
+  </header>
+</div>

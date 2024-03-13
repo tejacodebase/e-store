@@ -1,0 +1,158 @@
+<div class="panel-bg">
+    <form class="row g-3" [formGroup]="artForm" #form="ngForm" (ngSubmit)="onArtFormSubmit()">
+       
+        <div>
+            <button class="btn btn-success" type="button" *ngIf="!isEdit" (click)="onNewInit()"> New </button>
+
+            <button class="btn btn-success" type="submit" *ngIf="selectedArt.uuid == '' || isEdit">
+                {{ (!selectedArt.uuid) ? 'Create' : 'Update'}}
+            </button>
+
+            <button class="btn btn-primary" type="button" (click)="onEdit()" *ngIf="selectedArt.uuid != '' && !isEdit">
+                Edit </button>
+            <button class="btn btn-warning" type="button" *ngIf="selectedArt.uuid != '' && isEdit"
+                (click)="onEditCancel()"> Cancel </button>
+
+            <button class="btn btn-danger" type="button" (click)="onDelete()" *ngIf="selectedArt.uuid"> Delete </button>
+        </div>
+
+        <hr>
+
+        <span class="error-msg" *ngIf="errorMessage"> {{errorMessage}} </span>
+        
+ 
+        <div class="col-md-6">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" formControlName="title" [readonly]="!isEdit">
+            <span class="error-msg" *ngIf="!artForm.get('title')?.valid && (artForm.get('title')?.touched || form.submitted)"> Please enter the title! </span>
+        </div>
+
+        <div class="col-md-6">
+            <label for="category" class="form-label">Category</label>
+            <input type="text" class="form-control" id="category" formControlName="category" [readonly]="!isEdit">
+            <span class="error-msg" *ngIf="!artForm.get('category')?.valid && artForm.get('category')?.touched"> Please enter the category! </span>
+        </div>
+
+        <span class="error-msg" *ngIf="!this.errorMessage"> {{this.errorMessage}} </span>
+ 
+        <div class="line-break"></div>
+
+        <div class="row" >
+            <div class="col-8">
+                <label for="longDescreption" class="form-label">Art Picture</label>
+                <p-fileUpload mode="basic" chooseLabel="Choose" name="demo[]" [disabled]="!isEdit"
+                    url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" [auto]="true"
+                    (onUpload)="onUpload($event)"></p-fileUpload>
+            </div>
+            <div class="col-4">
+                <!-- <img [src]="selectedArt.image" height="120px" *ngIf="selectedArt.image"> -->
+                <p-image [src]="selectedArt.image" alt="Image" width="250" [preview]="true"> </p-image> 
+        </div>
+        </div>
+
+        <div class="line-break"></div>
+
+        <div class="col-12">
+            <label for="shortDescreption" class="form-label">Short Description</label>
+            <textarea id="shortDescreption" formControlName="shortDescreption" type="text" class="form-control"
+                rows="5" [readonly]="!isEdit"></textarea>
+        </div>
+
+        <div class="col-12">
+            <label for="longDescreption" class="form-label">Long Description</label>
+            <textarea id="longDescreption" formControlName="longDescreption" type="text"
+                class="form-control" [readonly]="!isEdit"></textarea>
+        </div>
+
+
+        <div class="col-md-6">
+            <label for="copyPrice" class="form-label">Copy Price</label>
+            <input id="copyPrice" formControlName="copyPrice" type="text" class="form-control" [readonly]="!isEdit">
+        </div>
+
+        <div class="col-md-6">
+            <label for="price" class="form-label">Price</label>
+            <input id="price" formControlName="price" type="text" class="form-control" [readonly]="!isEdit">
+        </div>
+
+
+        <div class="col-md-4">
+            <label for="artLength" class="form-label">Length</label>
+            <input type="text" class="form-control" id="artLength" formControlName="artLength" [readonly]="!isEdit">
+        </div>
+        <div class="col-md-4">
+            <label for="width" class="form-label">Width</label>
+            <input type="text" class="form-control" id="width" formControlName="width" [readonly]="!isEdit">
+        </div>
+        <div class="col-md-4">
+            <label for="height" class="form-label">Height</label>
+            <input type="text" class="form-control" id="height" formControlName="height" [readonly]="!isEdit">
+        </div>
+
+
+
+
+
+        <div class="col-md-6">
+            <label for="medium" class="form-label">Medium</label>
+            <input id="medium" formControlName="medium" type="text" class="form-control" [readonly]="!isEdit">
+        </div>
+
+        <div class="col-md-6">
+            <label for="weight" class="form-label">Weight</label>
+            <input id="weight" formControlName="weight" type="text" class="form-control" [readonly]="!isEdit">
+        </div>
+
+        <div class="col-md-6">
+            <label for="packageCharges" class="form-label">Package Charges</label>
+            <input id="packageCharges" formControlName="packageCharges" type="text" class="form-control" [readonly]="!isEdit">
+        </div>
+
+        <div class="col-md-6">
+            <label for="discount" class="form-label">Discount</label>
+            <input id="discount" formControlName="discount" type="text" class="form-control" [readonly]="!isEdit">
+        </div>
+
+
+        <div class="col-md-6">
+            <label for="homeVisibility" class="form-label">Home Visibility</label>
+            <fieldset [disabled]="!isEdit">
+                <div class="form-check form-switch">
+                    <!-- <input class="form-check-input" type="checkbox" role="switch" id="homeVisibility"
+                        [checked]="artForm.get('homeVisibility')?.value ? 1 : 0" formControlName="homeVisibility"> -->
+                    <label class="form-check-label" for="homeVisibility">{{ artForm.get('homeVisibility')?.value ? 'Show' : 'Hidden' }}</label>
+                </div>
+            </fieldset>
+        </div>
+
+
+        <div class="col-md-6">
+            <label for="status" class="form-label">Status</label>
+            <input id="status" formControlName="status" type="text" class="form-control" [readonly]="!isEdit">
+        </div>
+
+        <!-- createdDate imageUrl 
+        <div class="col-md-4">
+            <label for="inputState" class="form-label">State</label>
+            <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+            </select>
+        </div>
+
+
+        <div class="col-md-2">
+            <label for="inputZip" class="form-label">Zip</label>
+            <input type="text" class="form-control" id="inputZip">
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Check me out
+                </label>
+            </div>
+        </div>
+        -->
+    </form>
+</div>

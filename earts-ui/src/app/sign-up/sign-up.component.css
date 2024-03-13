@@ -1,0 +1,20 @@
+
+
+.member-header-text{
+    font-family: "Black Ops One", system-ui;
+    /* font-weight: 400; */
+    /* font-style: normal; */
+    /* color: red !important; */
+    /* border: 3px solid red;
+      color: white !important;
+      background: #ff4f59;
+      letter-spacing: 3px; */
+    /* text-decoration: underline; */
+
+    font-family: "Protest Revolution", sans-serif;
+    border: 6px solid #529d7f;
+    color: white !important;
+    padding: 5px;
+    background: #31976e;
+    letter-spacing: 3px;
+  }

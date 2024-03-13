@@ -1,0 +1,11 @@
+.member-header-text{
+    font-family: "Protest Revolution", sans-serif;
+    /* font-weight: 400; */
+    /* font-style: normal; */
+    /* color: red !important; */
+    border: 3px solid #4065bf;
+      color: white !important;
+      background: #4065bf;
+      letter-spacing: 3px;
+    /* text-decoration: underline; */
+  }

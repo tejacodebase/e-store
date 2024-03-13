@@ -1,0 +1,44 @@
+.title-median {
+    color: #0a95cd;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Kaushan Script', cursive;
+    line-height: 20px;
+    margin: 0 0 15px;
+}
+
+.nomargin {
+    margin: 0px;
+    padding: 0px;
+}
+
+.footer-bottom {
+    background-color: #586675;
+    min-height: 15px;
+    width: 100%;
+}
+ 
+.social-media-links{
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.contact-details-icon{
+    font-size: 20px;
+    /* top: 3px; */
+    /* position: relative; */
+}
+
+.nav-item, .nav-link {
+    font-weight: bold;
+    display: inline-block !important;
+}
+
+.nav-item :hover  {
+    color: #638fd4 !important;
+}
+
+.footer-headings {
+    color: #476daa;
+    font-weight: bold;
+}

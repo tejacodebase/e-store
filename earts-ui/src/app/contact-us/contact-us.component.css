@@ -1,0 +1,23 @@
+.header-text {
+  font-family: "Kalam", cursive;
+  font-weight: bold;
+  font-style: normal;
+  border: 3px solid #f73c03;
+  color: white !important;
+  background: linear-gradient(180deg, #c90000, #ff7d21);
+  padding: 10px 0px 0px 0px;
+  /* letter-spacing: 3px; */
+}
+
+.card{
+  background: linear-gradient(180deg, #c3af1447, #ff7d21eb);
+}
+
+.contact-details-header{
+  color: #e23a0f;
+  font-family: "Kalam", cursive;
+}
+
+.contact-details-icon{
+  font-size: 20px;
+}

@@ -1,0 +1,18 @@
+.header-text {
+    font-family: "Kalam", cursive;
+    font-weight: bold;
+    font-style: normal;
+    /* color: #c71717; */
+    /* text-decoration: underline; */
+    /* border: 3px solid #f73c03; */
+    color: white !important;
+    background: linear-gradient(180deg, #c90000, #ff7d21);
+    padding: 9px 17px 0px 17px;
+    border-radius: 3px;
+    /* letter-spacing: 3px; */
+  }
+
+  .body-text {
+    font-family: "Kalam", cursive;
+    color: black;
+  }

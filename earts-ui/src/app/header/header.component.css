@@ -1,0 +1,171 @@
+.header-style {
+  /* background-color: #ffc8b9 !important; */
+  /* background-color: #f8f9fa !important; */
+  background: linear-gradient(180deg, #c90000, #ff7d21); /* Gradient from Saddle Brown to Chocolate */
+ /*  transform: perspective(100px) rotateX(5deg); Apply perspective and rotate along the X-axis */
+  transition: all 0.3s ease; /* Add transition effects */
+  height: 50px;
+}
+
+
+.navbar {
+  min-height: 50px;
+  margin-bottom: 40px;
+  border-radius: 0px; 
+}
+
+.navbar-brand :hover {
+  background-color: lightgrey;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #dd5622;
+  background-color: #e4e4e4;
+  cursor: pointer;
+}
+
+.navbar-default {
+  border-color: #00000000;
+}
+
+.brand-name {
+  /* Old */
+  
+  /* color: #f40000; */
+  /* font-family: "Caveat", cursive; */
+  /* font-family: "Protest Revolution", sans-serif; */
+  /* font-weight: bold; */
+  /* font-size: 34px;
+  padding: 0px 16px 1px 18px;
+  border: 1px solid #fb5262;
+  margin-left: 20px;
+  border-radius: 29px;
+  background-color: #ffffff;
+  cursor: pointer; */
+  
+  /* Apply 3D text effect */
+  /* text-shadow: 5px 5px 10px rgba(0,0,0,0.3);   */
+  /* transform: perspective(100px) rotateX(10deg); Apply perspective and rotate along the X-axis */
+  /* transition: all 0.3s ease; Add transition effects; */
+
+  /* Old */
+
+
+  color: #f40000;
+  font-family: "Protest Revolution", sans-serif;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-size: 30px;
+  padding: 0px 14px 0px 18px;
+  border: 1px solid #fb5262; 
+  box-shadow: 0 1px 1px rgb(236 80 21), 0 0px 7px rgb(217 37 10);
+  margin-left: 20px;
+  margin-bottom: 8px;
+  border-radius: 29px;
+  background-color: #ffffff;
+  cursor: pointer;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  top: -3px;
+}
+ 
+
+.nav-link {
+  /* font-family: "Protest Revolution", sans-serif; */
+  /* font-family: "Prompt", sans-serif; */
+  /*  Old CSS */
+  /* font-family: "Lexend", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #ff0018;
+  border: 1px solid #c85d5d;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-right: 8px;
+  background-color: white; */
+  /*  Old CSS */
+
+/* Box Link */
+    /* border-radius: 25px; */
+  /* font-family: "Lexend", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: white;
+    padding: 12px 0px 12px 0px;
+    border: 1px solid #ee8c68;
+    cursor: pointer;
+    margin-right: 8px;
+    background-color: #ea4c14; */
+
+    /* Revert to this */
+    /* font-family: "Lexend", sans-serif; */
+    /* text-decoration-line: underline; */
+    /* font-size: 18px;
+    font-weight: 800;
+    color: white;
+    padding: 10px 0px 10px 0px; */
+    /* border: 1px solid #ee8c68; */
+    /* cursor: pointer;
+    margin-right: 8px;
+    border: 1px solid #00000000; */
+    /* background-color: #ea4c14; */
+    /* Revert to this */
+
+    font-family: "Lexend", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: white;
+    padding: 5px 0px 4px 0px;
+    cursor: pointer;
+    margin-right: 13px;
+    margin-top: -11px;
+    /* border: 1px solid #f38c8c; */
+
+    background: linear-gradient(180deg, #c90000, #ff7d21);
+}
+
+.active-link {
+  border: 1px solid #f5d8d8 !important;
+  background: linear-gradient(180deg, #c90000, #ff7d21) !important;  
+  /* background: linear-gradient(178deg, #ff0000, #ff6a00); */
+}
+
+.nav-link:hover {
+  /* background: #939393;
+  color: #b43c3c; */
+
+  /*  Old CSS */
+  /* border: 1px solid #f5d8d8; */
+  /* background: linear-gradient(180deg, #c90000, #ff7d21);   */
+  /*  Old CSS */
+
+
+  border: 0px solid #f5d8d8;
+  background: linear-gradient(0deg, #cb0501, #f97316);
+}
+
+
+.navbar-nav>li>a {
+  background: #939393;
+  color: #b43c3c;
+  font-weight: bold;
+  border: 1px solid #b43c3c !important;
+}
+
+.active, .active>a, .navbar-nav>li>active {
+  /* background: #939393;
+  color: #b43c3c; */
+}
+
+.active, .active>a :hover {
+  /* background: #939393;
+  color: #b43c3c;  */
+}
+
+.navbar-nav>li :hover {
+  background: #939393;
+  color: #b43c3c;
+}
+
+ 

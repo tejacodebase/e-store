@@ -1,0 +1,70 @@
+<div class="container-fluid border-top">
+  <footer class="py-4 ">
+    <div class="row">
+      
+      <div class="col-6 col-md-3 mb-3" style="padding: 0px 0px 0px 35px;">
+        <h5 class="footer-headings">Quick Links</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a routerLink="/about-me" class="nav-link p-0 text-body-secondary pointer f-link-text">
+              <i class="bi bi-chevron-right "></i>About</a></li>
+          <li class="nav-item mb-2"><a routerLink="/contact-us" class="nav-link p-0 text-body-secondary pointer">
+              <i class="bi bi-chevron-right "></i>Contact Me</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-3 mb-3">
+        <h5 class="footer-headings">Art Galleries</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="https://kalakritiartgallery.com/product-category/artist/moshe-dayan/"
+              target="_blank" class="nav-link p-0 text-body-secondary"> <i class="bi bi-chevron-right"></i> Artcloud</a>
+          </li>
+          <li class="nav-item mb-2"><a href="https://kalakritiartgallery.com/product-category/artist/moshe-dayan/"
+              target="_blank" class="nav-link p-0 text-body-secondary"><i class="bi bi-chevron-right"></i> Kalakriti</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-3 mb-3">
+        <h5 class="footer-headings"> Contact Details</h5>
+        <ul class="nav flex-column">
+          <div class="nav-item mb-2">
+            <i class="bi bi-at contact-details-icon"></i>
+            <span> {{ gmailLink }} </span>
+          </div>
+          <div class="nav-item mb-2">
+            <i class="bi bi-phone contact-details-icon"></i>
+            <span style="font-family: -webkit-pictograph;"> {{ contactNumber }} </span>
+          </div>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-3 mb-3">
+        <form>
+          <h5 class="footer-headings">Social Media</h5>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <div>
+              <ul class="nomargin">
+                <a href="https://www.facebook.com/moshedayanarts/" target="_blank">
+                  <i class="bi bi-facebook social-media-links"></i>
+                </a>
+                <a href="https://www.instagram.com/moshedayanartist/" target="_blank">
+                  <i class="bi bi-instagram social-media-links"></i>
+                </a>
+                <a href="{{ composeMailLink }}" target="_blank">
+                  <i class="bi bi-envelope-at-fill social-media-links"></i>
+                </a>
+                <a href="{{ whatsappLink }}" target="_blank">
+                  <i class="bi bi-whatsapp social-media-links"></i>
+                </a>
+              </ul>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="nav col-12 justify-content-end border-top">
+      <a target="_blank" href="https://www.linkedin.com/in/tjmr/">Developed by <b>Teja Maridu</b></a>
+    </div>
+  </footer>
+</div>
