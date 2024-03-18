@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-7">
+            <p-image [src]="'data:image/png;base64, ' +selectedArt.image" alt="Image" 
+                [imageStyle]="" class="art-image" [preview]="true" width="100%"
+                *ngIf="selectedArt.image"> </p-image> 
+            <p-skeleton width="100%" height="30rem" *ngIf="!selectedArt.image"></p-skeleton>
+            <!-- <img [src]="'data:image/png;base64, ' +selectedArt.image" alt="Image" class="art-image">  -->
+            <!-- <div class="project-info-box">
+                <p><b>Categories:</b> Design, Illustration</p>
+                <p><b>Skills:</b> Illustrator</p>
+            </div>   -->
+        </div>  
+
+        <div class="col-md-5">
+            <div class="project-info-box mt-0">
+                <h5 style="color: rgb(194, 64, 24); font-weight: bold;">Title: {{ selectedArt.title }}</h5>
+                <p class="mb-0"> {{selectedArt.shortDescreption}} </p>
+            </div>
+            
+            <div class="project-info-box">
+                <p><b>Category:</b> {{selectedArt.category}}</p>
+                <p><b>Medium:</b> {{selectedArt.medium}}</p>
+                <p><b>Length / Height:</b> {{selectedArt.artLength}} / {{selectedArt.height}} Inches</p>
+                <p><b>Copy Price:</b> {{selectedArt.copyPrice}}</p> 
+                <p><b>Original Price:</b> {{selectedArt.price}}</p>
+ 
+                <button class="btn btn-success btn-lg" (click)="addOrginalArtCart()">Buy Original</button>
+                <button class="btn btn-primary btn-lg" (click)="addPrintArtCart()">Buy Print</button>
+            </div>  
+        </div>  
+    </div>
+</div>

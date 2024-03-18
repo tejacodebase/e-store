@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import {CartService} from "../cart/cart.service";
-import {LoginService} from "../login/login.service";
+import {CartService} from "../cart/cart.service"; 
 import {CommonModule} from "@angular/common";
 import { RouterModule } from '@angular/router';
 import { ToastModule } from 'primeng/toast';
+import { LoginService } from '../shared/login.service';
 
 
 @Component({
@@ -21,12 +21,12 @@ export class HeaderComponent {
   constructor(private cartService: CartService, private loginService: LoginService) { }
 
   ngOnInit() {
-    // this.cartCount = this.cartService.getCartCount();
-    // this.cartService.cartUpdated.subscribe((count: number) => {
-    //   this.cartCount = count;
-    // });
-    // this.isLoggedin = this.loginService.isLoggedin;
-    // this.cartService.reloadCartFromLocalStorage();
+    this.cartCount = this.cartService.getCartCount();
+    this.cartService.cartUpdated.subscribe((count: number) => {
+      this.cartCount = count;
+    });
+    this.isLoggedin = this.loginService.isLoggedin;
+    this.cartService.reloadCartFromLocalStorage();
   }
 
   

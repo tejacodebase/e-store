@@ -116,13 +116,15 @@
     font-size: 18px;
     font-weight: 800;
     color: white;
-    padding: 5px 0px 4px 0px;
+    padding: 5px 0px 4px 0px;    
+    /* border: 1px solid #efefef47 !important; */
     cursor: pointer;
     margin-right: 13px;
     margin-top: -11px;
     /* border: 1px solid #f38c8c; */
 
     background: linear-gradient(180deg, #c90000, #ff7d21);
+    /* background: linear-gradient(180deg, #a75959, #cd5500); */
 }
 
 .active-link {
@@ -168,4 +170,7 @@
   color: #b43c3c;
 }
 
- 
+.badge {
+  border-radius: 9px;
+  border: 1px solid white;
+ }

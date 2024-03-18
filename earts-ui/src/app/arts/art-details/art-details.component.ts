@@ -6,6 +6,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, Validators, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ImageModule } from 'primeng/image';
+import { ImageStorageService } from '../../shared/image-storage.service';
 
 @Component({
   selector: 'app-art-details',
@@ -24,7 +25,8 @@ export class ArtDetailsComponent implements OnInit {
   errorMessage: string = '';
 
 
-  constructor(private artsService: ArtsService, private route: ActivatedRoute, private router: Router) {
+  constructor(private artsService: ArtsService, private route: ActivatedRoute, private router: Router,
+    private imageStorageService: ImageStorageService) {
     console.log('In Child Constructor');
   }
 
@@ -167,6 +169,7 @@ export class ArtDetailsComponent implements OnInit {
         // Base64-encoded image data
         const base64EncodedImage: string = fileReader.result as string;
         this.selectedArt.image = base64EncodedImage;
+        this.imageStorageService.saveImageToAssets(base64EncodedImage, this.selectedUuid);
       };
     }
   }

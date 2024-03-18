@@ -3,12 +3,13 @@ import {CommonModule} from "@angular/common";
 import { HomeService } from './home.service';
 import { Arts } from '../arts/arts.model';
 import { ImageModule } from 'primeng/image';
+import { ActivatedRoute, Route, Router, RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ImageModule],
+  imports: [CommonModule, ImageModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   currentIndex: number = 0;
   currentImage: string = '';
 
-  constructor(private homeService: HomeService) {}
+  constructor(private homeService: HomeService, private router: Router, private route: ActivatedRoute) {}
 
   images = [
     'assets/images/sliders/slider-1.jpg',
@@ -54,6 +55,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
     this.currentImage = this.images[this.currentIndex];
     console.log(this.currentIndex);
+  }
+
+  selectArt(art: Arts) {
+    this.homeService.selectedArt = art;
+    this.router.navigate(['art-view', art.uuid]);
   }
 
   ngOnDestroy(): void {}

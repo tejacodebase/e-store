@@ -17,12 +17,19 @@
         <a routerLinkActive="active-link" class="nav-link px-2" routerLink="/about-me">About </a>
       </li>
       <li>
-        <a routerLinkActive="active-link" class="nav-link px-2" routerLink="/contact-us"> <i class="fa fa-phone"></i>
+        <a routerLinkActive="active-link" class="nav-link px-2" routerLink="/contact-us">
           Contact</a>
       </li>
 
       <li>
         <a routerLinkActive="active-link" class="nav-link px-2" routerLink="/member"> Login </a>
+      </li>
+
+              
+      <li routerLinkActive="link-secondary">
+        <a routerLinkActive="active-link" class="nav-link px-2" routerLink="/cart"> 
+          <i class="bi bi-bag-fill"></i> Cart <span class="badge badge-pill"> {{ cartCount }} </span>
+        </a>
       </li>
   
       <div *ngIf="false">
@@ -51,16 +58,6 @@
               </a>
             </li>
           </ul>
-        </li>
- 
-        <li *ngIf="false" routerLinkActive="link-secondary">
-          <a class="nav-link px-2" routerLink="/login"> <i class="fa fa-sign-in"></i> Login </a>
-        </li>
-        <li *ngIf="false" routerLinkActive="link-secondary">
-          <a class="nav-link px-2" routerLink="/cart"> <i class="fa fa-shopping-cart"></i>
-            Cart
-            <span *ngIf="cartCount" class="label label-warning" style="border-radius: 10px; padding: 3px 5px 2px 5px;">
-              {{ cartCount }} </span> </a>
         </li>
       </div>
     </ul>

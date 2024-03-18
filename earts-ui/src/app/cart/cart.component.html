@@ -1,1 +1,180 @@
-<p>cart works!</p>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container mt-5">
+  <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="ibox">
+          <div class="ibox-title">
+            <span class="pull-right">(<strong>5</strong>) items</span>
+            <h5>Items in your cart</h5>
+          </div>
+          <div class="ibox-content" *ngFor="let item of cartItemsMap.values()">
+            <div class="table-responsive">
+              <table class="table shoping-cart-table">
+                <tbody>
+                  <tr>
+                    <td width="90">
+                      <div class="cart-product-imitation">              
+                        <img style="max-width: 90px;" [src]="'data:image/png;base64, ' +item.product.image" *ngIf="item.product.image"/>
+                      </div>
+                    </td>
+                    <td class="desc">
+                      <h3>
+                        <a href="#" class="text-navy">
+                          {{item.product.title}}
+                        </a>
+                      </h3>
+                      <p class="small">
+                        {{item.product.shortDescreption}}
+                      </p>
+                      <dl class="small m-b-none" *ngIf="false">
+                        <dt>Description lists</dt>
+                        <dd>A description list is perfect for defining terms.</dd>
+                      </dl>
+
+                      <div class="m-t-sm"> 
+                        <a (click)="removeCartItem(item)" class="text-muted pointer"><i class="fa fa-trash"></i> Remove item</a>
+                      </div>
+                    </td>
+
+                    <td>
+                      ₹ {{ item.isOrginal ? item.product.price : item.product.copyPrice}}
+                      <!-- <s class="small text-muted">$230,00</s> -->
+                    </td>
+
+                    <td width="65">
+                      <input type="text" class="form-control" placeholder="1">
+                    </td>
+                    <td>
+                      <h4>
+                        ₹ {{ item.isOrginal ? item.product.price : item.product.copyPrice}}
+                      </h4>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="ibox-content">
+            <button class="btn btn-primary pull-right"><i class="fa fa fa-shopping-cart"></i> Checkout</button>
+            <button class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue shopping</button>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-3">
+        <div class="ibox">
+          <div class="ibox-title">
+            <h5>Cart Summary</h5>
+          </div>
+          <div class="ibox-content">
+            <span>
+              Total
+            </span>
+            <h2 class="font-bold">
+              ₹ {{ grandTotal }}
+            </h2>
+
+            <hr>
+            <span *ngIf="false" class="text-muted small">
+              *For United States, France and Germany applicable sales tax will be applied
+            </span>
+            
+            <div class="m-t-sm">
+              <div class="btn-group">
+                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i> Checkout</a>
+                <a href="#" class="btn btn-white btn-sm"> Cancel</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="container" *ngIf="false">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <div class="row">
+              <div class="col-xs-12">
+                <h5><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="row" *ngFor="let item of cartItemsMap.values()">
+            <div class="col-xs-2">
+              <img src="http://placehold.it/150x80" class="img-responsive" *ngIf="!item.product.imageUrl" />
+              <img [src]="item.product.imageUrl" class="img-responsive" *ngIf="item.product.imageUrl"
+                style="padding: 4px;" />
+            </div>
+            <div class="col-xs-6">
+              <h4 class="product-name"><strong> {{ item.product.title }} </strong></h4>
+              <h5>
+                <span style="font-size: 10px; white-space: nowrap; color: orangered;">
+                  {{ item.isOrginal ? 'Original' : 'Copy' }}
+                </span>
+                <br>
+                <small> {{ item.product.shortDescreption }} </small>
+              </h5>
+            </div>
+            <div class="col-xs-4">
+              <div class="col-xs-3">
+                <input type="text" class="form-control input-sm" [(ngModel)]="item.qty" style="text-align: center;"
+                  (input)="updateQty(item)" [disabled]="item.isOrginal">
+              </div>
+              <div class="col-xs-5" style="text-align: center;">
+                <h6>
+                  <strong> {{ item.isOrginal ? item.product.price : item.product.copyPrice }} x {{ item.qty }} </strong>
+                </h6>
+                <h5 style="color:brown; ">
+                  <i class="fa fa-inr rupee"></i>
+                  <strong>
+                    {{ item.isOrginal ? item.product.price * item.qty : item.product.copyPrice * item.qty }}
+                  </strong>
+                </h5>
+              </div>
+              <div class="col-xs-4">
+                <button class="btn btn-sm btn-danger" (click)="removeCartItem(item)">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </div>
+            </div>
+            <hr>
+          </div>
+
+          <div class="panel-footer">
+            <div class="row text-center">
+              <div class="col-xs-2">
+                <button type="button" class="btn btn-warning btn-block" routerLink="/gallery">
+                  Continue Shopping
+                </button>
+              </div>
+              <div class="col-xs-7">
+                <h4 class="text-right">Total <strong> <i class="fa fa-inr rupee"></i> {{ grandTotal }} </strong>
+                </h4>
+              </div>
+              <div class="col-xs-3">
+                <button type="button" class="btn btn-success btn-block" routerLink="/deliveryDetails">
+                  Checkout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

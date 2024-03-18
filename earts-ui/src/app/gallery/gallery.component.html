@@ -3,7 +3,7 @@
 
     <div class="container px-4 px-lg-5 mt-4">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-          <div class="col mb-5" *ngFor="let art of arts">
+          <div class="col mb-5pointer" (click)="selectArt(art)" *ngFor="let art of arts">
             <div class="card h-100">
               <!-- <p-image [src]="'data:image/png;base64, ' +art.image" alt="Image" [preview]="true" class="card-img-top"> </p-image>  -->
               <img class="card-img-top" style="max-height: 300px;" [src]="'data:image/png;base64, ' +art.image" alt="..." />

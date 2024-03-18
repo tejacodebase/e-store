@@ -1,4 +1,3 @@
-<!-- <button (click)="showTopLeft()"> Message</button> -->
  
 <p class="text-center h2 header-text mt-4"> FEATURED ARTWORKS </p>
 
@@ -21,7 +20,7 @@
     </div>
 
     <div class="col mb-5" *ngFor="let art of arts">
-      <div class="card h-100">
+      <div class="card h-100 pointer" (click)="selectArt(art)">
         <!-- Product image-->
         <!-- <p-image [src]="'data:image/png;base64, ' +art.image" alt="Image" [preview]="true" class="card-img-top"> </p-image>  -->
         <img class="card-img-top" style="max-height: 300px;" [src]="'data:image/png;base64, ' +art.image" alt="..." />

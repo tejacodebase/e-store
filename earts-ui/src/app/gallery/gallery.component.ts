@@ -8,6 +8,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
+import { Router } from '@angular/router';
 
 
 
@@ -22,7 +23,7 @@ import { ButtonModule } from 'primeng/button';
 export class GalleryComponent {
   arts: Arts[] = [];
 
-  constructor(private galleryService: GalleryService) {}
+  constructor(private galleryService: GalleryService, private router: Router) {}
 
   ngOnInit() {
     console.log('In Parent Init');
@@ -43,6 +44,11 @@ export class GalleryComponent {
     );
   }
  
+  selectArt(art: Arts) {
+    this.galleryService.selectedArt = art;
+    this.router.navigate(['art-view', art.uuid]);
+  }
+  
   ngOnDestroy(): void {
 
   }

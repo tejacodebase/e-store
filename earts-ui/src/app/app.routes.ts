@@ -9,13 +9,17 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ArtsComponent } from './arts/arts.component';
 import { ArtDetailsComponent } from './arts/art-details/art-details.component';
 import { MemberComponent } from './member/member.component';
+import { ArtViewComponent } from './art-view/art-view.component';
+import { CartComponent } from './cart/cart.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: "full" },
   { path: 'home', component: HomeComponent },
+  { path: 'art-view/:uuid', component: ArtViewComponent },
   { path: 'member', component: MemberComponent },
   { path: 'startup', component: StartupComponent },
   { path: 'gallery', component: GalleryComponent },
+  { path: 'cart', component: CartComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'about-me', component: AboutMeComponent },
   { path: 'login', component: LoginComponent },
