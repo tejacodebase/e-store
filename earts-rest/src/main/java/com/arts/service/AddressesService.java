@@ -4,6 +4,8 @@ import com.arts.entity.Address;
 import com.arts.exception.BadRequestException;
 import com.arts.exception.ResourceNotFoundException;
 import com.arts.repository.AddressRepository;
+import com.arts.repository.UsersRepository;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,10 +20,12 @@ import static org.apache.commons.lang3.StringUtils.isEmpty;
 public class AddressesService {
 
     private final AddressRepository addressRepository;
+    private final UsersRepository userRepository;
 
     @Autowired
-    public AddressesService(AddressRepository addressRepository) {
+    public AddressesService(AddressRepository addressRepository, UsersRepository userRepository) {
         this.addressRepository = addressRepository;
+        this.userRepository = userRepository;
     }
 
     public List<Address> getAddress() {
@@ -63,7 +67,18 @@ public class AddressesService {
         if (!addressRepository.existsById(uuid)) {
             throw new ResourceNotFoundException("404000", "Address not found with Id");
         }
+
+        synchronized (addressRepository) {
+            
+        }
+
+        synchronized (userRepository) {
+            
+        }
+
         addressRepository.deleteById(uuid);
         return uuid;
     }
+
+
 }

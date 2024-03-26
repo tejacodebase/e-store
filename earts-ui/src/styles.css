@@ -87,3 +87,7 @@ button {
 .no-resize {
   resize: none;
 }
+
+.pull-right {
+  float: right;
+}

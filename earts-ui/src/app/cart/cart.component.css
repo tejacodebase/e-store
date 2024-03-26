@@ -92,3 +92,21 @@ table.shoping-cart-table tr td:last-child {
   background: #ffffff;
   padding: 10px 15px;
 }
+
+.cart-item-title {
+  font-weight: bold;
+  font-size: 16px;
+  color: brown;
+}
+
+.cart-item-orginal {
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(0, 156, 122);
+}
+
+.cart-item-print {
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(0, 86, 167);
+}

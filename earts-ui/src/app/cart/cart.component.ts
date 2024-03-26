@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CartItem } from './cart-item.model';
 import { CartService } from './cart.service'; 
-import { Router } from '@angular/router'; 
+import { Router, RouterModule } from '@angular/router'; 
 import { LoginService } from '../shared/login.service';
 import { TSMap } from 'typescript-map';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Arts } from '../arts/arts.model';
 import { ArtsService } from '../arts/arts.service';
 
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule, FormsModule ],
+  imports: [CommonModule, FormsModule, RouterModule ],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
@@ -54,9 +53,9 @@ export class CartComponent implements OnInit {
     }
   }
 
-  updateQty(cartItem: CartItem) {
+  updateQty(cartItem: CartItem, qty: number) {
     // , qty: number
-    var qty = cartItem.qty;
+    // var qty = cartItem.qty;
     this.cartService.updateQty(cartItem, qty);
     // this.toastr.success('Quantity Updated.');
   }
@@ -77,5 +76,10 @@ export class CartComponent implements OnInit {
   }
 
   refreshCart() {
+  }
+
+  onArtQuantityChange(event: Event) {
+    console.log(event.returnValue);
+    
   }
 }

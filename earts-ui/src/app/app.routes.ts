@@ -11,6 +11,7 @@ import { ArtDetailsComponent } from './arts/art-details/art-details.component';
 import { MemberComponent } from './member/member.component';
 import { ArtViewComponent } from './art-view/art-view.component';
 import { CartComponent } from './cart/cart.component';
+import { OrderOverviewComponent } from './order-overview/order-overview.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: "full" },
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'startup', component: StartupComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'order-overview', component: OrderOverviewComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'about-me', component: AboutMeComponent },
   { path: 'login', component: LoginComponent },
